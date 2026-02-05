@@ -23,6 +23,7 @@ for table in tables:
 parsed_google_doc = [doc_rows[i:i+3] for i in range(0, len(doc_rows), 3)]
 custom_parsed_google_doc = [doc_rows[i:i+3] for i in range(0, len(doc_rows), 3)]
 
+# DECODE AND ULTIMATELY SET UP THE DRAWING OF GRID ENCRYPTED MESSAGE
 def decode_google_doc(doc):
   number_of_rows_left = max(int(row[2]) for row in doc)
   # - DEBUG/TESTING - print("number of rows left" + str(number_of_rows_left))
@@ -48,7 +49,7 @@ def decode_google_doc(doc):
 # THIS IS THE ASSIGNMENT - ASSUMING ALL GOOGLE PUBLISHED URLs HAVE A HEADER ROW
 decode_google_doc(parsed_google_doc)
 
-# THIS IS TRIAL AND ERROR/DESIGN - IT ENCORPORATES MORE THAN JUST ONE LETTER FROM THE EXAMPLE IF THIS IS THE FORMATE USED
+# THIS IS TRIAL AND ERROR/DESIGN - IT INCORPORATES MORE THAN JUST ONE LETTER FROM THE EXAMPLE IF THIS IS THE FORMAT USED
 def load_custom_parsed(doc):
     doc.append(['4', ' ', '2'])
     doc.append(['5', '█', '2'])
@@ -87,8 +88,6 @@ def load_custom_parsed(doc):
     doc.append(['11', '█', '0'])
     doc.append(['12', '█', '0'])
     doc.append(['13', ' ', '0'])
-
-
     
 # ELABORATE ON ORIGINAL LETTER TO FORM A WORD
 load_custom_parsed(custom_parsed_google_doc)
